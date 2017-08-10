@@ -1,0 +1,122 @@
+% LaTeX file for resume
+
+% possible options include:
+%   font size (10pt, 11pt and 12pt)
+%   paper size (a4paper, a5paper, letterpaper, legalpaper, and landscape)
+%   font family (sans and roman)
+\documentclass[10pt,letterpaper,sans]{moderncv}
+
+%\usepackage{fontspec}
+
+\usepackage{tikz}
+
+\newcommand{\ghCommit}[1]{%
+\begin{tikzpicture}[y=0.7pt,x=0.7pt,yscale=-1, inner sep=0pt, outer sep=0pt]%
+  \path[even odd rule,fill=#1]%
+  (10.86,7.00) .. controls (10.41,5.28) and%
+  (8.86,4.00) .. (7.00,4.00) .. controls (5.14,4.00) and%
+  (3.59,5.28) .. (3.14,7.00) -- (0.00,7.00) -- (0.00,9.00) --%
+  (3.14,9.00) .. controls (3.59,10.72) and (5.14,12.00) ..%
+  (7.00,12.00) .. controls (8.86,12.00) and (10.41,10.72) ..%
+  (10.86,9.00) -- (14.00,9.00) -- (14.00,7.00) -- (10.86,7.00)%
+  -- cycle(7.00,10.20) .. controls (5.78,10.20) and (4.80,9.22) ..%
+  (4.80,8.00) .. controls (4.80,6.78) and (5.78,5.80) ..%
+  (7.00,5.80) .. controls (8.22,5.80) and (9.20,6.78) ..%
+  (9.20,8.00) .. controls (9.20,9.22) and (8.22,10.20) ..%
+  (7.00,10.20) -- cycle;%
+\end{tikzpicture}}
+
+% style options are casual (default), classic, banking, oldstyle and fancy
+% color options black, blue (default), burgundy, green, grey, orange, and red
+\moderncvstyle{casual}
+\moderncvcolor{blue}
+%\moderncvicons{marvosym}
+
+% to set the default font:
+%   use \sfdefault for the default sans serif font
+%   use \rmdefault for the default roman one
+%   or use any TeX font name
+\renewcommand{\familydefault}{\sfdefault}
+
+% Disable page numbers
+\nopagenumbers{}
+
+% character encoding
+%\usepackage[utf8]{inputenc}
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+
+% extra packages
+\usepackage{booktabs}
+
+% if you want to change the width of the column with the dates
+%%\setlength{\hintscolumnwidth}{3cm}
+
+% if you want to force the width allocated to your name and avoid line breaks
+%%\setlength{\makecvtitlenamewidth}{10cm}
+
+\name{Daniel}{Cartwright}
+\email{cornonthecob99@gmail.com}
+% \homepage{someurl}
+\social[github]{chessai}
+%\social[linkedin]{chessai}
+
+\newcommand{\wlink}[2]{\textcolor[HTML]{0020B6}{\href{#1}{#2}}}
+
+\newcommand{\ghlink}[2]{\wlink{https://github.com/#1}{#2}}
+\newcommand{\ghrepo}[1]{\ghlink{#1}{\faGithub}}
+\newcommand{\ghlang}[1]{\texttt{#1}}
+\newcommand{\ghcom}[1]{\textcolor[HTML]{666666}{\ghCommit{} #1}}
+\newcommand{\ghadd}[1]{\textcolor[HTML]{30A622}{{\faPlusCircle} #1}}
+\newcommand{\ghrem}[1]{\textcolor[HTML]{BD2C00}{{\faMinusCircle} #1}}
+\newcommand{\ghstar}[1]{#1}
+\newcommand{\ghfork}[1]{#1}
+\newcommand{\ghtr}[0]{}
+\newcommand{\ghtf}[0]{\faCodeFork}
+
+\newcommand{\ghub}[4]{\ghrepo{#2} | \ghlang{#1} | \ghadd{#3} | \ghrem{#4}}
+\newcommand{\ghtable}[6]{#1 & #2 & #3 & #4 & #5 & #6 \\}
+\newcommand{\ght}[9]{%
+  \ghtable{#1}
+          {\ghlink{#2/#3}{#3}}
+          {\ghlang{#4}}
+          {\ghcom{#5}}
+          {\ghadd{#6}}
+          {\ghrem{#7}}%
+}
+
+
+\begin{document}
+\makecvtitle{}
+
+\cventry{2016--}
+        {Hobby}
+        {\wlink{https://github.com/chessai}{Open Source Programming}}
+        {}{}{
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{l l l l l l}
+  \midrule
+  \ght{\ghtr{}}{chessai}{Vector}{Haskell}{2}{84}{0}{0}{50}
+  \ght{\ghtr{}}{chessai}{TicTacToe}{Haskell}{6}{112}{4}{2}{0}
+  \ght{\ghtr{}}{chessai}{project-euler}{Haskell}{3}{23}{4}{0}{0}
+  \ght{\ghtf{}}{phalt}{poketext}{Python}{11}{178}{83}{0}{0}
+  \midrule
+\end{tabular}
+}
+
+\vspace{1em}
+
+\section{Skills}
+%\cvitem{Languages}{English (native), Latin (5 yrs)}
+\cvitem{Programming}{%
+  \texttt{Haskell}, %
+  \texttt{Java}, \texttt{C}/\texttt{C++}, %
+  \texttt{Python}, \texttt{MATLAB}, \texttt{Mathematica}%
+}
+\cvitem{Software}{%
+  Linux (2 yrs), git
+}
+\cvitem{Other}{Emacs, \LaTeX, NixOS}
+
+\end{document}
