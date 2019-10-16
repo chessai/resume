@@ -98,8 +98,8 @@
 }
 
 \newcommand{\lang}[1]{\texttt{#1}}
-\newcommand{\langskill}[2]{\href{https://en.wikipedia.org/wiki/#1_(programming_language)}{\lang{#2}}}
-\newcommand{\lstable}[3]{\langskill{#1}{#2} & #3 \\}
+%\newcommand{\langskill}[2]{\href{https://en.wikipedia.org/wiki/#1_(programming_language)}{\lang{#2}}}
+%\newcommand{\lstable}[3]{\langskill{#1}{#2} & #3 \\}
 
 \newcommand{\course}[2]{\texttt{#1 #2}}
 \newcommand{\credit}[0]{$\star$}
@@ -120,9 +120,9 @@
   {}
   {
 \begin{itemize}
-  \item \textcolor{blue}{Allsight} - A distributed \wlink{https://en.wikipedia.org/wiki/Security_information_and_event_management}{SIEM}. The tool ingests syslog from various network devices (e.g. switches, routers, firewalls) and puts them through several transformative analysis pipelines (powered by \wlink{https://kafka.apache.org/}{Apache Kafka}). From this data, the tool uses rules defined by security experts to detect both single-log and multi-log (correlated) events, on which it then alerts via various channels, to clients and security response teams (either NOC personnel or security engineers). The tool has a frontend through which our security team can configure rulesand view collected data. Clients can also use the frontend to view all data relevant to them.
-  \item \textcolor{blue}{Insight} - A consumer of \textcolor{blue}{Allsight}. For clients with SSL Decrypt enabled on their network, this tool run simple pattern-matching rules over all web search data, alerting users who have subscribed to each rule. This is used in school systems to track web searches of students.
-  \item \textcolor{blue}{Diamond} - A network performance monitoring system. Uses \wlink{https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol}{SNMP} to gather metrics from network devices (e.g. interface throughput; utilization of cpu, memory, storage, power). The tool is fully concurrent; Thousands of hosts can be polled in about 30 seconds total. These metrics are normalized and pushed into \wlink{https://kafka.apache.org/}{Apache Kafka}. Three consumers read from this data: one which alerts on metrics that are indicative of a performance issue, one which pushes the data into \wlink{https://www.influxdata.com/}{InfluxDB}, and one which generates the \wlink{https://grafana.com/}{Grafana} dashboards based on the structure of the data. \wlink{https://grafana.com/}{Grafana} uses \wlink{https://www.influxdata.com/}{InfluxDB} as a data source for visualising all of this data.
+  \item \textcolor{blue}{Allsight} - A distributed \wlink{https://en.wikipedia.org/wiki/Security_information_and_event_management}{SIEM}. The tool ingests syslog from various network devices (e.g. switches, routers, firewalls) and puts them through several transformative analysis pipelines (powered by \wlink{https://kafka.apache.org/}{Apache Kafka}). From this data, the tool uses rules defined by security experts to detect both single-log and multi-log (correlated) events, on which it then alerts via various channels, to clients and security response teams (either NOC personnel or security engineers). The tool has a frontend through which our security team can configure rules and view collected data. Clients can also use the frontend to view all data relevant to them.
+  \item \textcolor{blue}{Insight} - A consumer of \textcolor{blue}{Allsight}. For clients with SSL Decrypt enabled on their network, this tool run simple pattern-matching rules over all web search data, alerting users who have subscribed to each rule. This is used by school districts to track web searches of students.
+  \item \textcolor{blue}{Diamond} - A network performance monitoring system. Uses \wlink{https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol}{SNMP} to gather metrics from network devices (e.g. interface throughput; utilization of CPU, memory, storage, power). The tool is fully concurrent; thousands of hosts can be polled in about 30 seconds total. These metrics are normalized and pushed into \wlink{https://kafka.apache.org/}{Apache Kafka}. The data is sent to an alerting tool as well as \wlink{https://www.influxdata.com/}{InfluxDB}/\wlink{https://grafana.com/}{Grafana}.
   \item \textcolor{blue}{Netcrawl} - Uses \wlink{https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol}{SNMP} and \wlink{https://en.wikipedia.org/wiki/Link_Layer_Discovery_Protocol}{LLDP} to brute-force the discovery of a network, given only a subnet or set of subnets. The tool collects a variety of useful data about each node in the network, and outputs a summary which can be analysed by human or another tool. The graph of the network can be output as a \wlink{http://www.graphviz.org/}{GraphViz} dot file. It is used to inform tools such as \textcolor{blue}{Diamond}.
   \item \textcolor{blue}{Lightband} - A GUI tool for ISPs that makes configuring \wlink{https://en.wikipedia.org/wiki/Network_interface_device\#Optical_network_terminals}{ONTs} significantly easier.
 \end{itemize}
@@ -134,7 +134,7 @@
 \cventry{2017--Present}
   {Maintainer \& Contributor}
   {\wlink{https://github.com/chessai}{chessai}}
-  {\newline I began writing \lang{Haskell} in August of 2017, \lang{Nix} shortly after. Since then, I have contributed to over 200 open source \lang{Haskell} projects. I actively maintain or co-maintain roughly 100 open source \lang{Haskell} libraries. I am a member of the \wlink{https://wiki.haskell.org/Core_Libraries_Committee}{Haskell Core Libraries Committe}, which oversees and maintains the core libraries that make up the \lang{Haskell} ecosystem. I am a drive-by contributor of the \wlink{https://www.haskell.org/ghc/}{Glasgow Haskell Compiler}. Listed are a few projects to which I contribute heavily and proudly.
+  {\newline I began writing \lang{Haskell} in August of 2017, \lang{Nix} shortly after. Since then, I have contributed to over 200 open source \lang{Haskell} projects. I actively maintain or co-maintain roughly 100 open source \lang{Haskell} libraries. I am a member of the \wlink{https://wiki.haskell.org/Core_Libraries_Committee}{Haskell Core Libraries Committe}, which oversees and maintains the core libraries that make up the \lang{Haskell} ecosystem. I am a drive-by contributor of the \wlink{https://www.haskell.org/ghc/}{Glasgow Haskell Compiler}. Listed are a few projects to which I contribute proudly.
   }
   {}
   {
@@ -143,33 +143,10 @@
   \item streaming: Haskell streaming library. \newline \ghub{Haskell}{haskell-streaming/streaming}{342}{292}
   %\item hedgehog-classes: Testing library for rapid typeclass law property testing using \wlink{https://hedgehog.qa/}{Hedgehog}. \newline \ghub{Haskell}{chessai/hedgehog-classes}{9354}{2380}
   \item eigen: Haskell bindings to the Eigen C++ linear algebra library. Provides a type-level interface to dimensionality, making many operations statically-verified to be safe. \newline \ghub{Haskell}{chessai/eigen}{342341}{15327}
+  %\item nixpkgs: the nixpkgs repo. \ghub{Nix}{NixOS/nixpkgs}{781}{322}
   \item nixos-configs: My NixOS configs. \newline \ghub{Nix}{chessai/nixos-configs}{2674}{1353}
   %\item rotera: A high-performance, persisted rotating queue. \newline \ghub{Haskell}{andrewthad/rotera}{1431}{330}
 \end{itemize}
-}
-
-\section{Skills}
-\cvitem{Programming}{
-  \setlength{\tabcolsep}{8pt}
-  \begin{tabular}{l l}
-    \midrule
-    \lstable{Haskell}{Haskell}{Expert}
-    \href{https://en.wikipedia.org/wiki/Nix_package_manager}{\lang{Nix}} & Advanced \\
-    \lstable{C}{C}{Intermediate}
-    \lstable{Rust}{Rust}{Intermediate}
-    \lstable{Idris}{Idris}{Intermediate}
-    \lstable{Purescript}{Purescript}{Intermediate}
-    \lstable{C_Sharp}{C\#}{Novice}
-    \midrule
-  \end{tabular}
-}
-
-\cvitem{Software}{
-  \href{https://en.wikipedia.org/wiki/Linux}{Linux}, %
-  \href{https://nixos.org}{NixOS}, %
-  \href{https://git-scm.com}{git}, %
-  \href{https://dhall-lang.org/}{Dhall}, %
-  \href{https://www.latex-project.org}{\LaTeX} %
 }
 
 \end{document}
