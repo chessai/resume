@@ -112,15 +112,28 @@
 %\vspace{0.6em}
 
 \section{Work Experience}
-\cventry{2017--Present}
-  {Programmer}
+\cventry{2020--Present}
+  {Haskell Programmer}
+  {\wlink{https://mercury.com}{Mercury, Banking for Startups}}
+  {}
+  {}
+  {
+\begin{itemize}
+  \item I work on a banking webserver using \lang{Haskell} and \wlink{https://www.yesodweb.com/}{Yesod}.
+  \item I have done some small amounts of frontend development for \wlink{https://mercury.com}{mercury.com}, which is written with \lang{TypeScript} + \lang{React}.
+  \item I co-maintain a lot of the infrastructure for \textcolor{blue}{\wlink{https://mercury.com}{Mercury}}, which is comprised of: \wlink{https://aws.amazon.com/}{AWS}, \wlink{https://nixos.org/}{\lang{Nix}}, \wlink{https://nixos.wiki/wiki/Hydra}{Hydra}, \wlink{https://www.terraform.io/}{Terraform}, and \wlink{https://dhall-lang.org/}{\lang{Dhall}}.
+\end{itemize}
+}
+
+\cventry{2017--2019}
+  {Haskell Programmer}
   {\wlink{https://layer3com.com}{Layer 3 Communications, LLC.}}
   {}
   %\newline I develop and maintain a suite of network security tools in \lang{Haskell} as part of a small team.
   {}
   {
 \begin{itemize}
-  \item I develop and maintain a suite of network security tools in \lang{Haskell} as part of a small team.
+  \item I developed and maintained a suite of network security tools in \lang{Haskell} as part of a small team.
   \begin{itemize}
     \item \textcolor{blue}{Allsight} - A distributed \wlink{https://en.wikipedia.org/wiki/Security_information_and_event_management}{SIEM}. The tool ingests and analyses syslog, and from this analysis it uses rules defined by security experts to detect both single-log and multi-log (correlated) events, on which it alerts. There is a GUI for our security team to configure rules and view collected data. Clients can also use the GUI to view data relevant to them.
     \item \textcolor{blue}{Insight} - GUI and alerting system for tracking web searches. This is used by school districts to track web searches of students.
@@ -138,18 +151,15 @@
 \cventry{2017--Present}
   {Maintainer \& Contributor}
   {\wlink{https://github.com/chessai}{chessai}}
-  {\newline I began writing \lang{Haskell} in August of 2017, \lang{Nix} shortly after. Since then, I have contributed to over 200 open source \lang{Haskell} projects. I actively maintain or co-maintain roughly 100 open source \lang{Haskell} libraries. I am a member of the \wlink{https://wiki.haskell.org/Core_Libraries_Committee}{Haskell Core Libraries Committe}, which oversees and maintains the core libraries that make up the \lang{Haskell} ecosystem. I am a drive-by contributor of the \wlink{https://www.haskell.org/ghc/}{Glasgow Haskell Compiler}. Listed are a few projects to which I contribute proudly.
+  {\newline I began writing \lang{Haskell} in August of 2017, \lang{Nix} shortly after. Since then, I have contributed to over 200 open source \lang{Haskell} projects. I actively maintain or co-maintain roughly 100 open source \lang{Haskell} libraries. I am a member of the \wlink{https://wiki.haskell.org/Core_Libraries_Committee}{Haskell Core Libraries Committe}, which oversees and maintains the core libraries that make up the \lang{Haskell} ecosystem. I am the chief maintainer of the \lang{Haskell} standard library, base. I am a drive-by contributor of the \wlink{https://www.haskell.org/ghc/}{Glasgow Haskell Compiler}. Listed are just a few projects to which I contribute proudly.
   }
   {}
   {
 \begin{itemize}
-  \item refined: Embedding simple first-order refinement types inside of GHC Haskell. Supports run-time and compile-time refinements. \newline \ghub{Haskell}{chessai/refined}{5195}{3622}
+  \item refined: Embedding simple refinement types inside of GHC Haskell. Supports run-time and compile-time refinements. \newline \ghub{Haskell}{chessai/refined}{7687}{6035}
   \item streaming: Haskell streaming library. \newline \ghub{Haskell}{haskell-streaming/streaming}{342}{292}
-  %\item hedgehog-classes: Testing library for rapid typeclass law property testing using \wlink{https://hedgehog.qa/}{Hedgehog}. \newline \ghub{Haskell}{chessai/hedgehog-classes}{9354}{2380}
-  \item eigen: Haskell bindings to the Eigen C++ linear algebra library. Provides a type-level interface to dimensionality, making many operations statically-verified to be safe. \newline \ghub{Haskell}{chessai/eigen}{342341}{15327}
-  \item nixpkgs: the nixpkgs repo. \newline \ghub{Nix}{NixOS/nixpkgs}{781}{322}
-  \item nixos-configs: My NixOS configs. \newline \ghub{Nix}{chessai/nixos-configs}{2781}{1403}
-  %\item rotera: A high-performance, persisted rotating queue. \newline \ghub{Haskell}{andrewthad/rotera}{1431}{330}
+  \item nixpkgs: the nixpkgs repo. \newline \ghub{Nix}{NixOS/nixpkgs}{1602}{36}
+  \item nixos-configs: My NixOS configs. \newline \ghub{Nix}{chessai/nixos-configs}{5786}{3480}
 \end{itemize}
 }
 

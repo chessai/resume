@@ -1,4 +1,5 @@
-{ pkgs ? import (builtins.fetchTarball "https://github.com/NixOS/nixpkgs/archive/94500c93dc239761bd144128a1684abcd08df6b7.tar.gz") {}
+{ pkgs ? import <nixpkgs> {} 
+#(builtins.fetchTarball "https://github.com/NixOS/nixpkgs/archive/94500c93dc239761bd144128a1684abcd08df6b7.tar.gz") {}
 }:
 
 with pkgs;
@@ -34,10 +35,4 @@ stdenv.mkDerivation rec {
     license = licenses.bsd3;
     platforms = platforms.linux;
   };
-
-  shellHook = ''
-    function watch() {
-      make watch
-    }
-  '';
 }
