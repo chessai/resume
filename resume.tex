@@ -113,15 +113,27 @@
 
 \section{Work Experience}
 \cventry{2020--Present}
+  {Software Engineer}
+  {\wlink{https://facebook.com}{Facebook}}
+  {}
+  {}
+  {
+\begin{itemize}
+  \item I maintain \wlink{https://github.com/facebook.com/duckling}{Duckling}, an open source library for parsing text into structured data
+  \item I co-maintain \wlink{https://wit.ai}{wit.ai}, a solution for providing third-party users access to Facebook's NLP capabilities
+\end{itemize}
+}
+
+\cventry{2020--2021}
   {Haskell Programmer}
   {\wlink{https://mercury.com}{Mercury, Banking for Startups}}
   {}
   {}
   {
 \begin{itemize}
-  \item I work on a banking webserver using \lang{Haskell} and \wlink{https://www.yesodweb.com/}{Yesod}.
+  \item I worked on a banking webserver using \lang{Haskell} and \wlink{https://www.yesodweb.com/}{Yesod}.
   \item I have done some small amounts of frontend development for \wlink{https://mercury.com}{mercury.com}, which is written with \lang{TypeScript} + \lang{React}.
-  \item I co-maintain a lot of the infrastructure for \textcolor{blue}{\wlink{https://mercury.com}{Mercury}}, which is comprised of: \wlink{https://aws.amazon.com/}{AWS}, \wlink{https://nixos.org/}{\lang{Nix}}, \wlink{https://nixos.wiki/wiki/Hydra}{Hydra}, \wlink{https://www.terraform.io/}{Terraform}, and \wlink{https://dhall-lang.org/}{\lang{Dhall}}.
+  \item I co-maintained a lot of the infrastructure for \textcolor{blue}{\wlink{https://mercury.com}{Mercury}}, which at the time was comprised of: \wlink{https://aws.amazon.com/}{AWS}, \wlink{https://nixos.org/}{\lang{Nix}}, \wlink{https://nixos.wiki/wiki/Hydra}{Hydra}, \wlink{https://www.terraform.io/}{Terraform}, and \wlink{https://dhall-lang.org/}{\lang{Dhall}}.
 \end{itemize}
 }
 
@@ -136,12 +148,9 @@
   \item I developed and maintained a suite of network security tools in \lang{Haskell} as part of a small team.
   \begin{itemize}
     \item \textcolor{blue}{Allsight} - A distributed \wlink{https://en.wikipedia.org/wiki/Security_information_and_event_management}{SIEM}. The tool ingests and analyses syslog, and from this analysis it uses rules defined by security experts to detect both single-log and multi-log (correlated) events, on which it alerts. There is a GUI for our security team to configure rules and view collected data. Clients can also use the GUI to view data relevant to them.
-    \item \textcolor{blue}{Insight} - GUI and alerting system for tracking web searches. This is used by school districts to track web searches of students.
     \item \textcolor{blue}{Diamond} - A network performance monitoring system. Uses \wlink{https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol}{SNMP} to gather metrics from network devices (e.g. interface throughput; utilization of CPU, memory, storage, power). The tool is fully concurrent; thousands of hosts can be polled in about 30 seconds total. These metrics are normalized and pushed into \wlink{https://kafka.apache.org/}{Apache Kafka}. The data is tracked by an alerting tool and sent to \wlink{https://www.influxdata.com/}{InfluxDB}/\wlink{https://grafana.com/}{Grafana}.
     \item \textcolor{blue}{Netcrawl} - Uses \wlink{https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol}{SNMP} and \wlink{https://en.wikipedia.org/wiki/Link_Layer_Discovery_Protocol}{LLDP} to brute-force the discovery of a network, given only a subnet or set of subnets. The tool collects a variety of useful data about each node in the network, and outputs a summary which can be analysed by human or another tool. The graph of the network can be output as a \wlink{http://www.graphviz.org/}{GraphViz} dot file.
-    \item \textcolor{blue}{Lightband} - A GUI tool for ISPs that makes configuring \wlink{https://en.wikipedia.org/wiki/Network_interface_device\#Optical_network_terminals}{ONTs} significantly easier.
   \end{itemize}
-  \item Setup and maintained a \wlink{https://nixos.org/hydra/}{Hydra} server for Layer 3 Communication's Haskell projects.
 \end{itemize}
 }
 
@@ -156,10 +165,10 @@
   {}
   {
 \begin{itemize}
+  \item duckling: Haskell library for parsing text into structured data. \newline \ghub{Haskell}{facebook/duckling}{3738}{2275}
   \item refined: Embedding simple refinement types inside of GHC Haskell. Supports run-time and compile-time refinements. \newline \ghub{Haskell}{chessai/refined}{7687}{6035}
-  \item streaming: Haskell streaming library. \newline \ghub{Haskell}{haskell-streaming/streaming}{342}{292}
-  \item nixpkgs: the nixpkgs repo. \newline \ghub{Nix}{NixOS/nixpkgs}{1602}{36}
-  \item nixos-configs: My NixOS configs. \newline \ghub{Nix}{chessai/nixos-configs}{5786}{3480}
+  \item nixpkgs: the nixpkgs repo. \newline \ghub{Nix}{NixOS/nixpkgs}{2807}{36}
+  \item nixos-configs: My NixOS configs. \newline \ghub{Nix}{chessai/nixos-configs}{5965}{3574}
 \end{itemize}
 }
 
